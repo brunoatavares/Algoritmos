@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+
+<body>
+    <center>
+        <h1><b><u>
+                    Forma de Pagamento
+                </u></b></h1>
+
+        <select id="combo1">
+            <option value="0"></option>
+            <option value="1">Dinheiro</option>
+            <option value="2">Cartão de Débito</option>
+            <option value="3">Cartão de Crédito</option>
+            <option value="4">Boleto</option>
+        </select>
+<br><br>
+        <button onclick="verificar()">
+            Anali$ar Compra
+        </button>
+    </center>
+</body>
+
+</html>
+<script>
+    function verificar() {
+        var combo = combo1.value;
+        if (combo == '1' || combo == '2') {
+            alert('Você terá que pagar a vista');
+        } else {
+            alert('Pagamento poderá ser parcelado');
+        }
+    }
+</script>

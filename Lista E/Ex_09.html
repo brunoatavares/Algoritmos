@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+
+<body>
+    <h2>Financiamento de Imóvel</h2><br><br>
+    Valor da Renda Familiar: <br>
+    <input id="ipt_valor"> <br>
+    Valor da Prestação: <br>
+    <input id="ipt_prest"> <br>
+
+    <button onclick="verificar()">Verificar Financiamento</button>
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+<script>
+    function verificar() {
+        var x = Number(ipt_valor);
+        var y = Number(ipt_prest);
+        var z = x / y;
+        
+        div_msg.innerHTML = `A prestação corresponde a ${z * 100}% da renda familiar`;
+    }
+</script>

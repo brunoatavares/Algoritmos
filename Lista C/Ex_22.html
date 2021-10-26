@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 22</title>
+</head>
+
+<body>
+    <span style="display: block;" id="some">
+        <h2>
+            Entregas para ZS
+            <br><input type="number" id="zs_entrega"><br>
+            Entregas para ZN
+            <br><input type="number" id="zn_entrega"><br>
+            Entregas para ZL
+            <br><input type="number" id="zl_entrega"><br>
+            Entregas para ZO
+            <br><input type="number" id="zo_entrega"><br>
+            <button onclick="agenda()" id="status" style="display: block;">Carregar Agenda</button>
+    </span>
+    </h2>
+</body>
+
+</html>
+<script>
+    var zs = 0;
+    var zn = 0;
+    var zl = 0;
+    var zo = 0;
+    var total = 0;
+    function agenda() {
+        some.style.display = 'none';
+
+
+        total = Number(zs_entrega.value) + (zs_entrega.value) + (zl_entrega.value) + (zo_entrega.value);
+             
+        
+
+    }
+
+
+</script>

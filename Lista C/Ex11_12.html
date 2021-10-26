@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+</head>
+<body>
+    <h2>Valor guardado no cofrinho: R$ <b id="saldo">0,00</b></h2><br>
+        Valor a ser depositado:<br><input type="number" id="dep"><br>
+
+        <button onclick="deposito()" id="b_dep">Depositar</button>
+        <button onclick="retirar()" id="b_ret">Tirar toda a grana</button>
+        
+           
+    
+</body>
+</html>
+<script>
+  var total_cofre =0;
+  var ret_cofre =0;
+
+  function deposito(){
+      total_cofre = Number(dep.value);
+      saldo.innerHTML = total_cofre.toFixed(2);
+  };
+
+
+  function retirar() {
+      saldo.innerHTML = ret_cofre.toFixed(2); 
+  };
+
+
+</script>

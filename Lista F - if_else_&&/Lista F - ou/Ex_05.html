@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+<body>
+    Temperatura atual: <br>
+    <input type="number" id="ipt_atual"><br><br>
+    <button onclick="verificar()">Analisar clima</button>
+    
+</body>
+</html>
+<script>
+    function verificar(){
+        var temp = ipt_atual.value;
+        if (temp < 21 && temp > 24) {
+            alert('Alerta de desconforto!');
+        } else if (temp < 21) {
+            alert('As pessoas vão ter hiportemia');
+        } else {
+            alert('As pessoas vão derreter');            
+        }
+    }
+</script>

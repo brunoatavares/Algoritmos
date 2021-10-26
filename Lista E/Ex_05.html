@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+
+<body>
+    <h2>Dieta do Refri</h2>
+
+    Quantidade de latas por dia: <br><input id="qtd_dia"> <br>
+
+    <button onclick="qtd_refri()">Quantos refri?</button>
+    <div id="total_ano"></div>
+
+</body>
+
+</html>
+<script>
+    function qtd_refri() {
+        var total_refri = Number(qtd_dia.value) * 365;
+        total_ano.innerHTML = `Foi ingerido ${total_refri} latinhas de refri no ano`
+
+        if (total_refri > 500) {
+            alert('Cuidado com a diabetes!');
+        }
+    };
+</script>

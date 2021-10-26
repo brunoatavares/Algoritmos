@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+
+<body>
+    <h2>Noite da Pizza!</h2><br><br>
+    Valor da Pizza: <br>
+    <input id="ipt_valor"><br>
+    Quantidade de Amigos Reunidos: <br>
+    <input id="ipt_qtd"><br>
+
+    <button onclick="individual()">Rola a Pizza?</button>
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+<script>
+    function individual() {
+        var p = Number(ipt_valor.value);
+        var r = Number(ipt_qtd.value);
+        var media = p / r;
+
+        if (media > 20) {
+            alert('Deu ruim! Pizza muito cara!')
+        };
+
+        div_msg.innerHTML = `Cada amigo vai pagar R$ ${media} pela pizza.`
+    }
+</script>

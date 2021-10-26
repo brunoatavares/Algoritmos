@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+
+<body>
+    <center>
+        <h1><b><u>
+                    Calculadora de cansaço aprimorada do aluno Bandtec
+                </u></b></h1>
+        <select id="combo1">
+            <option value="0">Meio de transporte</option>
+            <option value="1">Ônibus</option>
+            <option value="2">Metrô</option>
+            <option value="3">Carro</option>
+            <option value="4">Bicicleta</option>
+        </select><br><br>
+
+        Qual a distância da sua casa até a faculdade?<br>
+        <input id="ipt_distancia" placeholder="Distância em km"><br><br>
+
+        <button onclick="verificar()">Calcular cansaço</button>
+    </center>
+</body>
+
+</html>
+<script>
+    function verificar() {
+        var distancia = ipt_distancia.value;
+        var combo = combo1.value;
+
+        if (distancia <= 10 && (combo == 1 || combo == 2 || combo == 3)) {
+            alert('Tá tranks..');
+        } else {
+            alert('É.. um pouco cansado..');            
+        }
+        if (distancia > 10 && (combo == 3)) {
+            alert('É.. um pouco cansado..');
+        } else if (distancia > 10 && (combo == 2) || (combo == 1)) {
+            alert('Bem cansado');
+        } else if (distancia > 10 && combo == 4){
+            alert('Vish, tá só o pó!');            
+        }
+    }
+</script>

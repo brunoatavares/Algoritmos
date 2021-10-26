@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 06</title>
+</head>
+
+<body>
+    <p>
+    <h1><b><u>
+                Controle de Temperatura
+            </u></b></h1>
+    </p>
+    Qual a temperatura do ambiente? <br>
+    <input type="number" id="temp_amb"> <br><br>
+    <button onclick="verificar()">
+        Verificar Clima
+    </button>
+    <div id="div_msg">
+    </div>
+
+</body>
+
+</html>
+<script>
+    function verificar() {
+        if (temp_amb.value < 10) {
+            div_msg.innerHTML = (`<br><img src="https://thumbs.dreamstime.com/b/uma-ma%C3%A7%C3%A3-de-desenho-animado-podre-desagrad%C3%A1vel-em-vetor-cor-castanha-ou-ilustra%C3%A7%C3%A3o-colorida-est%C3%A1-esperando-para-ser-160153308.jpg" style="width: 100px; height: 100px;">`);
+        }
+
+        else {
+            div_msg.innerHTML += (`<img src="https://gartic.com.br/imgs/mural/br/brunaahxgames/maca.png" style="height: 100px; width: 100px;">`);
+        }
+    }
+</script>

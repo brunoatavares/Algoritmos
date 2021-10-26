@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+
+<body>
+    <h2>
+        <p>Resultado Sprint 3</p>
+    </h2>
+    Nota 1: <br>
+    <input type="number" id="nota_um" placeholder="Insira a primeira nota"><br>
+    Nota 2: <br>
+    <input type="number" id="nota_dois" placeholder="Insira a segunda nota"><br><br>
+    <button onclick="verificar()">
+        Verificar Situação
+    </button>
+
+</body>
+</html>
+<script>
+    function verificar(){
+        var um = Number(nota_um.value)
+        var dois = Number(nota_dois.value);
+        var media = (um + dois) / 2;
+        
+        if (media >= 6){
+            alert ('Parabéns, aprovado!!');
+        }
+        else {
+            alert ('Tente outra vez..');
+        }
+    };
+</script>

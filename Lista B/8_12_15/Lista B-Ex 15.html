@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 15</title>
+</head>
+
+<body>
+    <p>
+    <h1><b><u>Resultado das Eleições:</u></b></h1>
+    </p>
+    <h3>
+        <div>Votos Zé Ruela:</div><br><input id="ze_vts"><br>
+        <div>Votos Bozo:</div> <br><input id="bozo"><br>
+        <div>Votos Brancos:</div><br><input id="vts_bran"><br>
+        <div>Votos Nulos:</div> <br><input id="vts_nulo"><br><br>
+
+        <!--Botão para chamar a função do script-->
+        <button style="background-color: darkgreen;" onclick="resultado()">Resultado da Eleição</button>
+    </h3>
+    <!--div para exibir os resultados-->
+    <div id="div_eleicao"></div>
+
+
+</body>
+
+</html>
+<script>
+    function resultado() {
+        // definindo as variáveis // 
+        var vts_zeruela = Number(ze_vts.value);
+        var vts_bozo = Number(bozo.value);
+        var invalidos = Number(vts_bran.value) + Number(vts_nulo.value);
+        var total = (vts_zeruela) + (vts_bozo) + (invalidos);
+
+        
+
+
+
+        // mudando o corpo da div, conforme ex15 //
+
+        div_eleicao.innerHTML = `<h3>
+        Total de votos:<br>
+        <div style="background-color: rgb(143, 250, 245); width: 100px;">${total}</div> <br>
+        Zé Ruela: <br>
+        <div style="background-color: rgb(143, 250, 245); width: 50px;">${vts_zeruela}</div><br>
+        Bozo: <br>
+        <div style="background-color: rgb(143, 250, 245); width: 50px;">${vts_bozo}</div><br>
+        Inválidos: <br>
+        <div style="background-color: rgb(143, 250, 245); width: 70px;">${invalidos} </div><br></h3>`;
+    };
+
+
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+
+<body>
+
+    <head>
+        <h1>
+            Qual o tipo de arroz?
+        </h1>
+        <select id="combo1">
+            <option value="1">Branco</option>
+            <option value="2">Integral</option>
+        </select>
+    </head>
+    <h3>
+        Qual o tempo de cozimento? <br>
+    </h3>
+    <input id="tempo" placeholder="Tempo de cozimento"><br>
+    <h3>
+        Quantidade de sal usado? (gramas) <br>
+    </h3>
+    <input id="sal" placeholder="Sal em gramas"> <br><br>
+
+    <button onclick="verificar()">
+        Avaliar arroz
+    </button>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+<script>
+    function verificar() {
+        if (combo1.value = 1 && tempo.value == 10 && sal.value == 10) {
+            div_msg.innerHTML = `Arroz perfeito !!!`;
+        } else if (combo1.value == 2 && tempo.value == 20 && sal.value == 20) {
+            div_msg.innerHTML = `Arroz perfeito !!!`;
+        } else {
+            div_msg.innerHTML = `Seu arroz não está perfeito`;
+        }
+    }
+</script>

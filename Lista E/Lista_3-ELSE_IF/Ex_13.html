@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+</head>
+
+<body>
+    <p>
+    <h1><u>
+            <center><b>
+                    Minhas Finanças
+                </b></center>
+        </u></h1>
+    </p>
+    Valor guardado: R$ <span id="valor">0.00</span>
+    <div>
+        <button style="background-color: green;" onclick="guardar()">Guardar R$5,00</button>
+        <button style="background-color: red;" onclick="gastar()">Gastar R$10,00</button>
+    </div>
+
+    <div id="div_msg"></div>
+</body>
+
+</html>
+<script>
+    var valor_atual = Number(0);
+
+    function guardar() {
+        valor_atual = valor_atual + Number(5);
+        valor.innerHTML = valor_atual.toFixed(2);
+        saldo()
+    };
+
+    function gastar() {
+        valor_atual = valor_atual - 10;
+        valor.innerHTML = valor_atual.toFixed(2);
+        saldo()
+    }
+
+    function saldo() {
+        if (valor_atual > 100) {
+            div_msg.innerHTML = `<b style="color: blue;">Finanças OK!! #ostentação</b>`;
+        } else if (valor_atual >= 0) {
+            div_msg.innerHTML = `<b style="color: blue;">Finanças OK!!</b>`;
+        } else if (valor_atual <= -20) {
+            div_msg.innerHTML = `<b style="color: red;">Finanças em PERIGO!! <br>Quase um CUrinthians!</b>`;
+        } else {
+            div_msg.innerHTML = `<b style="color: red;">Finanças em PERIGO!!</b>`;
+        }
+    }
+</script>

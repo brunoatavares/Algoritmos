@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+
+<body>
+    <h2>Tabuada</h2>
+    <select id="div" onchange="calcular()">
+        <option value="">Selecione um Número</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select> <br>
+    <div id="resultado"></div>
+
+</body>
+
+</html>
+<script>
+    function calcular() {
+        resultado.innerHTML =
+            `${div.value} x 0 = ${div.value} <br>
+       ${div.value} x 1 = ${div.value} <br>
+       ${div.value} x 2 = ${div.value} <br>
+       ${div.value} x 3 = ${div.value} <br>
+       ${div.value} x 4 = ${div.value} <br>
+       ${div.value} x 5 = ${div.value} <br>
+       ${div.value} x 6 = ${div.value} <br>
+       ${div.value} x 7 = ${div.value} <br>
+       ${div.value} x 8 = ${div.value} <br>
+       ${div.value} x 9 = ${div.value} <br>
+       ${div.value} x 10 = ${div.value} <br>`
+    }
+
+
+</script>

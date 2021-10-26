@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+
+<body>
+    <h2>Cofrinho</h2>
+    <select id="valor">
+        <option value="">Selecione o Valor do Deposito</option>
+        <option value="0.05">5 centavos</option>
+        <option value="0.10">10 centavos</option>
+        <option value="0.25">25 centavos</option>
+        <option value="0.50">50 centavos</option>
+        <option value="1.00">1 real</option>
+        <option value="2.00">2 reais</option>
+        <option value="5.00">5 reais</option>
+        <option value="10.00">10 reais</option>
+        <option value="20.00">20 reais</option>
+        <option value="50.00">50 reais</option>
+        <option value="100.00">100 reais</option>
+        <option value="200.00">200 reais</option>
+    </select>
+    <br><br><br>
+
+    <div id="msg">
+        O saldo do cofrinho é de R$ <b>0,00</b><br><br>
+        A quantidade de operações foi: <b>0</b><br><br>
+        Média dos depósitos: R$ <b>0,00</b>
+    </div>
+    <br>
+    <button onclick="depositar()">Depositar</button>
+    <button onclick="zerar()">Gastar a grana</button>
+
+</body>
+
+</html>
+<script>
+    var total_cofre = 0;
+    var qtd_depositos = 0;
+    var media_depositos = 0;
+
+    function depositar() {
+        total_cofre = Number(total_cofre) + Number(valor.value);
+        qtd_depositos++;
+        media_depositos = total_cofre / qtd_depositos;
+
+        msg.innerHTML =
+            `O saldo do cofrinho é de R$ <b>${total_cofre.toFixed(2)}</b><br><br>
+            A quantidade de operações foi: <b>${qtd_depositos}</b><br><br>
+            Média dos depósitos: R$ <b>${media_depositos.toFixed(2)}</b>`
+    };
+    function zerar() {
+        total_cofre = 0;
+        qtd_depositos = 0;
+        media_depositos = 0;
+
+        msg.innerHTML =
+            `O saldo do cofrinho é de R$ <b>${total_cofre.toFixed(2)}</b><br><br>
+            A quantidade de operações foi: <b>${qtd_depositos}</b><br><br>
+            Média dos depósitos: R$ <b>${media_depositos.toFixed(2)}</b>`
+    };
+
+</script>

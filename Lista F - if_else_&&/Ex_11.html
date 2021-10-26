@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+
+<body>
+    Digite sua idade: <br>
+    <input type="number" id="ipt_idade"><br>
+    Digite seu salário: <br>
+    <input type="number" id="ipt_salario"><br><br>
+    <button onclick="verificar()">Análisar situação</button>
+
+</body>
+
+</html>
+<script>
+    function verificar() {
+        var idade = ipt_idade.value;
+        var salario = ipt_salario.value;
+
+        if (idade < 18 && salario < 2500) {
+            alert('Menor de idade e liso');
+        } else if (idade < 18 && salario >= 2500) {
+            alert('Menor de idade e ostentação');
+        } else if (idade >= 18 && salario < 3500) {
+            alert('Maior de idade e liso');
+        } else if (idade >= 18 && salario <= 7000) {
+            alert('Maior de idade e ostentação');
+        } else {
+            alert('Maior de idade e mega ostentação');
+        }
+    }
+</script>

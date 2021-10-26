@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 08</title>
+</head>
+<body>
+
+<div id="tela1">
+    <h1>Seja bem vindo ao banco KNAB</h1>
+<br><br>
+    <h2>Simulação de Empréstimos e Investimentos</h2>
+<br><br>
+    <h4>Entre com os dados de sua conta:</h4>
+    <input type="text" id="conta" placeholder="Conta">
+    <input type="text" id="digito" placeholder="Dígito">
+    <input type="password" id="senha" placeholder="Senha">
+    <img id="botao_senha" onclick="mostrar_senha()" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWAYx8O0dToFRBQdQWsNSp0h4aFMrqNRmN9g&usqp=CAU" style="height: 20px;">
+<br><br><br>
+    <button onclick="validar()">Simular</button>
+</div>
+
+<div id="tela2" style="display: none;">
+    <h1>O Banco KNAB é a sua melhor opção</h1>
+<br>
+    <h2>Empréstimos e Investimentos com as melhores taxas do mercado</h2>
+<br>
+    <h4>Entre com os dados da sua simulação</h4>
+<br><br>
+    Valor da operação:
+    <input type="text" id="valor" placeholder="valor">
+<br><br>
+    <select id="operacao">
+        <option value="">Selecione a Operação</option>
+        <option value="emprestimo">Empréstimo</option>
+        <option value="investimento">Investimento</option>
+    </select>
+    <select id="prazo">
+        <option value="">Selecione o Prazo</option>
+        <option value="curto">Curto</option>
+        <option value="medio">Médio</option>
+        <option value="longo">Longo</option>
+    </select>
+<br><br><br>
+    <button onclick="simular()">Mostrar o Resultado</button>
+</div>
+
+<div id="tela3" style="display: none;">
+<br><br>
+    <button onclick="voltar()">Voltar Simulação</button>
+    <div id="div_simulacao"></div>
+</div>
+
+</body>
+</html>
+
+<script>
+    var ax_simulacao = 0;
+
+    function mostrar_senha(){
+        if(senha.type == 'password') {
+            senha.type = 'text';
+            botao_senha.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_aZN6tq37BGshr15UF6IC0bObxrW4mdriOA&usqp=CAU';
+        } else {
+            senha.type = 'password';
+            botao_senha.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWAYx8O0dToFRBQdQWsNSp0h4aFMrqNRmN9g&usqp=CAU';
+        };
+    };
+
+    function validar(){
+        var ax_digito = conta.value % 11; //resto da divisão por 11
+        if (conta.value == 0) {
+            alert('O número da conta precisa ser diferente de 0');
+        } else if (digito.value != ax_digito){
+            alert('Verifique o dígito');
+        } else if (senha.value != 'manaus' && (digito.value >= 0 && digito.value <= 3)) {
+            alert('Verifique sua senha');
+        } else if (senha.value != 'recife' && (digito.value >= 4 && digito.value <= 7)) {
+            alert('Verifique sua senha');
+        } else if (senha.value != 'fortaleza' && (digito.value >= 8 && digito.value <=10)) {
+            alert('Verifique sua senha');
+        } else {
+            tela1.style.display = 'none';
+            tela2.style.display = 'block';
+        };
+    };
+
+    function simular(){
+        ax_simulacao++;
+        var ax_valor = Number(valor.value);
+
+        if (prazo.value == 'curto' || prazo.value == 'medio') {
+            alert('Esta operação está condicionada ao seu perfil');
+        };
+        
+        if (operacao.value == 'emprestimo' && prazo.value == 'curto') {
+            div_simulacao.innerHTML += `<br><br>Simulação <b>${ax_simulacao}</b> - Para o empréstimo de <b>R$ ${ax_valor.toFixed(2)}</b> no ${prazo.value} prazo será cobrado os juros de <b>R$ ${(ax_valor * 0.24).toFixed(2)}</b> ao ano<br><br>`;
+        } else if (operacao.value == 'emprestimo' && prazo.value == 'medio') {
+            div_simulacao.innerHTML += `<br><br>Simulação <b>${ax_simulacao}</b> - Para o empréstimo de <b>R$ ${ax_valor.toFixed(2)}</b> no ${prazo.value} prazo será cobrado os juros de <b>R$ ${(ax_valor * 0.16).toFixed(2)}</b> ao ano<br><br>`;
+        } else if (operacao.value == 'emprestimo' && prazo.value == 'longo') {
+            div_simulacao.innerHTML += `<br><br>Simulação <b>${ax_simulacao}</b> - Para o empréstimo de <b>R$ ${ax_valor.toFixed(2)}</b> no ${prazo.value} prazo será cobrado os juros de <b>R$ ${(ax_valor * 0.10).toFixed(2)}</b> ao ano<br><br>`;
+        } else if (operacao.value == 'investimento' && prazo.value == 'curto') {
+            div_simulacao.innerHTML += `<br><br>Simulação <b>${ax_simulacao}</b> - Investindo <b>R$ ${ax_valor.toFixed(2)}</b> no ${prazo.value} prazo o seu rendimento será de <b>R$ ${(ax_valor * 0.05).toFixed(2)}</b> ao ano<br><br>`;
+        } else if (operacao.value == 'investimento' && prazo.value == 'medio') {
+            div_simulacao.innerHTML += `<br><br>Simulação <b>${ax_simulacao}</b> - Investindo <b>R$ ${ax_valor.toFixed(2)}</b> no ${prazo.value} prazo o seu rendimento será de <b>R$ ${(ax_valor * 0.08).toFixed(2)}</b> ao ano<br><br>`;
+        } else if (operacao.value == 'investimento' && prazo.value == 'longo') {
+            div_simulacao.innerHTML += `<br><br>Simulação <b>${ax_simulacao}</b> - Investindo <b>R$ ${ax_valor.toFixed(2)}</b> no ${prazo.value} prazo o seu rendimento será de <b>R$ ${(ax_valor * 0.12).toFixed(2)}</b> ao ano<br><br>`;
+        }
+        
+        tela2.style.display = 'none';
+        tela3.style.display = 'block';
+    };
+
+    function voltar(){
+        valor.value = '';
+        prazo.value = '';
+        operacao.value = '';
+        tela3.style.display = 'none';
+        tela2.style.display = 'block';
+    };
+</script>

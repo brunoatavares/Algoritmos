@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folha de Pagamento!</title>
+</head>
+
+<body>
+    <h1>
+        <p>Descontos do Salário</p>
+    </h1>
+    <div><b>Entre com o seu salário:</b></div>
+    <input id="salario_trab" placeholder="Salário trabalhador"><br>
+
+    <!--botão para chamar a função do script-->
+    <button onclick="desconto_pag()">
+        Carcular Descontos</button><br><br>
+
+    <!--div para exibir os resultados-->
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+<script>
+    function desconto_pag() {
+
+        // definindo as variáveis //
+        var x = Number(salario_trab.value);
+        var i = x * 0.1;
+        var ir = x * 0.2;
+        var total_desc = i + ir;
+        var total_salario = x - total_desc;
+
+        div_msg.innerHTML = `
+        Seus descontos serão de: <br>
+        INSS:R$${i}  <br>
+        IR: R$${ir} <br>
+        Total de descontos: R$${total_desc} <br>
+        Seu salário, após os descontos será de: R$${total_salario} <br>`
+
+    }
+
+</script>
