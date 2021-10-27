@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 09</title>
+</head>
+
+<body>
+
+    Insira um número <br>
+    <input type="number" id="ipt_number" placeholder="Número"><br><br>
+
+    Insira uma frase <br>
+    <input type="text" id="ipt_frase" placeholder="Digite a frase"><br><br>
+
+    <button onclick="verificar()">Papagaio</button>
+
+    <span id="span_msg"></span>
+
+</body>
+
+</html>
+<script>
+    function verificar() {
+
+        var contagem = 1;
+        span_msg.innerHTML = '';
+
+        while (contagem <= ipt_number.value) {
+            span_msg.innerHTML += `<br>${ipt_frase.value} `;
+            contagem++;
+        }
+
+    }
+</script>

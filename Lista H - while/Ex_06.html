@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 06</title>
+</head>
+
+<body>
+
+    Quem você mais ama na vida? <br>
+    <input type="text" id="ipt_nome" placeholder="Insira o nome aqui"><br><br>
+
+    Quanto você à ama? <br>
+    <input type="number" id="ipt_qtd"><br><br>
+
+    <button onclick="verificar()">Expressar Amor</button>
+
+    <span id="span_msg"></span>
+
+</body>
+
+</html>
+<script>
+    function verificar() {
+      
+        var contador = 1;
+        span_msg.innerHTML = '';
+
+        while (contador <= ipt_qtd.value) {
+            span_msg.innerHTML += `<b><br>${contador} -${ipt_nome.value}</b>, eu te amo! <i>Sempre lembre disso!</i><br><br>`;
+            contador++;
+        }
+    }
+</script>

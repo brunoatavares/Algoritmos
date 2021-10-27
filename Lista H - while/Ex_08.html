@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 08</title>
+</head>
+
+<body>
+
+    Insira um número <br>
+    <input type="number" id="number" placeholder="0 a 200"> <br><br>
+
+    <button onclick="viver()">Viva o 7</button>
+
+    <span id="span_msg"></span>
+
+</body>
+
+</html>
+<script>
+    function viver() {
+        if (number.value < 0 || number.value > 200) {
+            alert('Número inválido');
+        } else {
+            contar();
+        }
+
+        function contar() {
+
+            var contagem = 0;
+            span_msg.innerHTML = '';
+
+            while (contagem <= number.value) {
+                if (contagem % 7 == 0) {
+                    span_msg.innerHTML += `<br>${contagem}`;
+                }
+                contagem++;
+            }
+        }
+    }
+</script>
