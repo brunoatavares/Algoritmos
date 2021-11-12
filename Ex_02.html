@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 02</title>
+</head>
+
+<body>
+
+    Destino da viagem: <br>
+    <input type="text" id="ipt_destino"><br><br>
+
+    <button onclick="adicionar()">Adicionar</button><br><br>
+
+    <button onclick="primeira()">1ª Viagem</button><br>
+    <button onclick="terceira()">3ª Viagem</button><br>
+    <button onclick="ultima()">Última Viagem</button><br>
+
+    <div id="msg"></div>
+</body>
+
+</html>
+
+<script>
+    var vt_viagem = [];
+    msg.innerHTML = '';
+
+    function adicionar() {
+        vt_viagem.push(ipt_destino.value);
+        ipt_destino.value = '';
+    }
+
+    function primeira() {
+        if (vt_viagem.length > 0) {
+            msg.innerHTML += `Sua primeira viagem:${vt_viagem[0]}<br>`;
+            return false;
+        } else {
+            alert('Ainda não viajou!!');
+        }
+    }
+
+    function terceira() {
+        if (vt_viagem.length > 2) {
+            msg.innerHTML += `Sua terceira viagem:${vt_viagem[2]}<br>`;
+            return false;
+        } else {
+            alert('Você ainda não fez a 3ª viagem!');
+        }
+    }
+
+    function ultima() {
+        if (vt_viagem == 0) {
+            alert('Ainda não fez nenhuma viagem!');
+        } else {
+            msg.innerHTML += `Sua última viagem:${vt_viagem.length}`;
+        }
+    }
+
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 01</title>
+</head>
+<body>
+    
+    <input id="ipt_frutas" placeholder="Insira uma fruta"> <br><br>
+
+    <button onclick="calcular()">Pesquisar</button>
+
+    <div id="div_msg"></div>
+
+</body>
+</html>
+<script>
+    function calcular(){
+        var frutas = ['banana','morango','manga','uva'];
+        var ipt = ipt_frutas.value;
+        div_msg.innerHTML = '';
+
+        if (frutas.indexOf(ipt) == -1) {
+            div_msg.innerHTML += `Não existe a fruta ${ipt} na lista`;
+        } else {
+            div_msg.innerHTML += `A fruta ${ipt} existe na lista`;
+        }
+    } 
+</script>
